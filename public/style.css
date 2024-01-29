@@ -300,4 +300,7 @@ body{
     .tasksContainer{
         width: 550px;
     }
+    .timeSettings{
+        width: 550px;
+    }
 }
