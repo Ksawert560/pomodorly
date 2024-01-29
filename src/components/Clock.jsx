@@ -100,7 +100,7 @@ function Clock(){
             opacityRef.current = opacityRef.current - step
             
             tick()
-        },10)
+        },1000)
         return () => clearInterval(interval)
     }, [clockInfo])
 
