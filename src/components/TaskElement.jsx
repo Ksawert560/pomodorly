@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect} from "react";
 
 import AddTaskContext from "./AddtaskContext";
 
@@ -12,11 +12,18 @@ function TaskElement(props){
         if(localStorage.getItem('taskList')) taskList=JSON.parse(localStorage.getItem('taskList'));
         filteredArray = taskList.filter(task=>task!==taskName);
         localStorage.setItem('taskList', JSON.stringify(filteredArray));
-        let newValue = true
-        addTaskInfo.setUpdate(newValue)
+        addTaskInfo.setUpdate(true)
         addTaskInfo.updateRef.current = true
     }
     
+    useEffect(()=>{
+        while(addTaskInfo.updateRef.current===true){
+            addTaskInfo.storedItems = JSON.parse(localStorage.getItem("taskList"))
+            addTaskInfo.setUpdate(false)
+            addTaskInfo.updateRef.current = false
+        }
+
+    }, [addTaskInfo, addTaskInfo.storedItems])
 
     return(
         <div className="taskElement">

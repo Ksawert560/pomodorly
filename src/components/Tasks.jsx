@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import TaskElement from "./TaskElement";
 import AddTask from "./AddTask"
 import AddTaskContext from "./AddtaskContext"
@@ -10,19 +10,12 @@ function Tasks(){
     if(localStorage.getItem("taskList")){
         storedItems=JSON.parse(localStorage.getItem("taskList"))
     }
-    const [currentTasks, setCurrentTasks] = useState(storedItems)
 
     const [update, setUpdate] = useState(false)
     const updateRef = useRef(update)
 
-    useEffect(()=>{
-        while(updateRef.current===true){
-            setCurrentTasks(JSON.parse(localStorage.getItem("taskList")))
-            setUpdate(false)
-            updateRef.current = true
-        }
 
-    }, [currentTasks])
+
 
     const [showAddTask, setShowAddTask] = useState(false)
 
@@ -50,7 +43,7 @@ function Tasks(){
             setShowAddTask,
             storedItems,
             setUpdate,
-            updateRef
+            updateRef,
         }}>
             {showAddTask ? <AddTask/> : 
             <div className="tasksContainer">
