@@ -17,6 +17,9 @@
     --accentShade: #776779;
   }
 
+html,body{
+    overflow: hidden;
+}
 
 body{
     background-color: var(--background);
@@ -25,7 +28,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 90vh;
+    height: 100vh;
     font-family: 'JetBrains Mono', monospace;
 }
 
