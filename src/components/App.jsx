@@ -42,19 +42,19 @@ function App(){
 
     //shortcuts listener
     window.addEventListener('keydown', event =>{
-        if(event.ctrlKey && event.key === "ArrowRight"){ //show tasks 
+        if(event.altKey && event.key === "ArrowRight"){ //show tasks 
             setShowTasks(true)
             showTasksRef.current = true
             setIsActiveTasks(true)
             setIsActiveTimer(false)
         }
-        else if(event.ctrlKey && event.key === "ArrowLeft"){ //show timer
+        else if(event.altKey && event.key === "ArrowLeft"){ //show timer
             setShowTasks(false)
             showTasksRef.current = false
             setIsActiveTasks(false)
             setIsActiveTimer(true)
         }
-        if(event.key==="/" && event.ctrlKey && event.altKey && showTasksRef.current===false){
+        if(event.key==="/" && event.altKey && showTasksRef.current===false){
             setShowSettings(true)
         }
     })

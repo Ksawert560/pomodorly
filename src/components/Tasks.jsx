@@ -25,13 +25,15 @@ function Tasks(){
     }
 
     let taskDiv = []
+    let number = 0;
     storedItems.forEach(task=>{
-        taskDiv.push(<TaskElement taskName={task} inputName={task}/>)
+        taskDiv.push(<TaskElement taskName={task} inputName={task} key={number} id={number}/>)
+        number++
     })
 
 
     window.addEventListener('keydown', event=>{
-        if(event.ctrlKey && event.altKey && event.key===","){
+        if(event.altKey && event.key===","){
             setShowAddTask(true)
         }
     })

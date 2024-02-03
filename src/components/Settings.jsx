@@ -101,6 +101,11 @@ function Settings(){
 
         <div className="themeBtn" onClick={themeToggle}>{appInfo.currentTheme} Theme</div>
         <div className="exitBtn" onClick={displayClock}>Go Back</div>
+
+        <div className="extras">
+            <a href="https://github.com/Ksawert560/pomodorly?tab=readme-ov-file#shortcuts" target="_blank" rel="noreferrer">shortcuts</a>
+            <a href="https://github.com/Ksawert560/pomodorly" target="_blank" rel="noreferrer">github</a>
+        </div>
         </div>
     )
 }

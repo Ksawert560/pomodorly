@@ -7,13 +7,21 @@ function TaskElement(props){
     const addTaskInfo = useContext(AddTaskContext)
 
     function deleteTask(event){
+        
         const taskName = event.target.name;
         let taskList = [];
-        if(localStorage.getItem('taskList')) taskList=JSON.parse(localStorage.getItem('taskList'));
-        filteredArray = taskList.filter(task=>task!==taskName);
-        localStorage.setItem('taskList', JSON.stringify(filteredArray));
-        addTaskInfo.setUpdate(true)
-        addTaskInfo.updateRef.current = true
+        let lineId = event.target.parentNode.children[2].id
+        document.getElementById(lineId).classList.toggle('showLine')
+        setTimeout(()=>{
+            if(localStorage.getItem('taskList')) taskList=JSON.parse(localStorage.getItem('taskList'));
+            filteredArray = taskList.filter(task=>task!==taskName);
+            localStorage.setItem('taskList', JSON.stringify(filteredArray));
+            addTaskInfo.setUpdate(true)
+            addTaskInfo.updateRef.current = true
+            document.getElementById(lineId).classList.toggle('showLine')
+            event.preventDefault()
+        },300)
+        event.preventDefault()
     }
     
     useEffect(()=>{
@@ -25,10 +33,12 @@ function TaskElement(props){
 
     }, [addTaskInfo, addTaskInfo.storedItems])
 
+
     return(
         <div className="taskElement">
             <input type="checkbox" name={props.inputName} onClick={deleteTask}></input>
             <p>{props.taskName}</p>
+            <div id={props.id}></div>
         </div>
     )
 }

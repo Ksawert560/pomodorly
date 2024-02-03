@@ -2,6 +2,7 @@ import React, {useContext, useEffect, useRef, useState} from "react";
 import ClockContext from "./ClockContext";
 import SettingsContext from "./SettingsContext";
 import AudioFile from "../sounds/digital-alarm.mp3"
+import { eventWrapper } from "@testing-library/user-event/dist/utils";
 
 
 let alarmSound = new Audio(AudioFile)
@@ -113,6 +114,15 @@ function Clock(){
         alarmSound.play()
         setTimeout(()=>{ alarmSound.pause()}, 2000)
     }
+
+    window.addEventListener('keydown', event =>{
+        if(event.altKey && event.key==='s'){
+            startClick()
+        }
+        if(event.altKey && event.key==='b'){
+            stopClick()
+        }
+    })
 
     return(
         <div className="clock">

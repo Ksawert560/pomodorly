@@ -157,7 +157,6 @@ body{
     border-radius: 10px;
     width: 60%;
     padding: 0 10px;
-    margin-left: -10px;
     height: 50px;
     display: flex;
     align-items: center;
@@ -170,7 +169,7 @@ body{
 .timeSettings{
     width: 700px;
     background-color: var(--background);
-    height: 70%;
+    height: 85%;
     position: absolute;
     display: flex;
     align-items: center;
@@ -182,7 +181,6 @@ body{
     border-radius: 10px;
     height: 70px;
     padding: 0 10px;
-    margin-left: -10px;
     font-size: 20px;
     width: 60%;
     border: 1px solid var(--text);
@@ -206,6 +204,20 @@ body{
     font-weight: 600;
 }
 .timeControl:hover{
+    cursor: pointer;
+}
+.timeSettings .extras{
+    background-color: var(--background);
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.timeSettings .extras a, .timeSettings .extras p{
+    color: var(--text);
+    text-decoration: underline;
+}
+.timeSettings .extras a:hover, .timeSettings .extras p:hover{
     cursor: pointer;
 }
 
@@ -234,10 +246,10 @@ body{
     gap: 10px;
 }
 .tasksContainer .taskList .taskElement{
+    position: relative;
     width: 100%;
     border-radius: 10px;
     margin: 0 auto;
-    /* padding: 0 5px; */
     background-color: var(--background);
     display: grid;
     grid-template-columns: 1fr 9fr;
@@ -250,10 +262,25 @@ body{
     accent-color: var(--background);
     border: 1px solid var(--text);
 }
+
+.tasksContainer .taskList .taskElement div{
+    position: absolute;
+    width: 85%;
+    background-color: var(--text);
+    height: 2px;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    visibility: hidden;
+}
+.tasksContainer .taskList .taskElement div.showLine{
+    left: 52%;
+    visibility: visible;
+    transition: .1 ease;
+}
 .addTaskBtn{
     width: 60%;
     padding: 0 10px;
-    height: 50px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;

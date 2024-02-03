@@ -1,11 +1,15 @@
-# pomodorly.
+# pomodorly. 
+
+[pomodorly](https://pomodorly.netlify.app/) is a simple and a minimalistic pomodoro timer web app. 
+
+![image](https://raw.githubusercontent.com/Ksawert560/pomodorly/master/img/pomodorly_light.png)
 
 
-Simple pomodoro timer app with to-do-list bulit in 
+## shortcuts
 
-
-## Shortcuts 
-- ctrl + -> - go to Tasks Tab
-- ctrl + <- - go to Timer Tab
-- ctrl + alt + / - go to settings only in Timer Tab
-- ctrl + alt + , - go to add task only in Tasks Tab
+- `alt + ->` - go to Tasks Tab
+- `alt + <-` - go to Timer Tab
+- `alt + /` - go to settings, only in Timer Tab
+- `alt + , ` - go to add task, only in Tasks Tab
+- `alt + s` - start timer
+- `alt + b` - stop timer
