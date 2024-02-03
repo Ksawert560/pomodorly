@@ -30,7 +30,7 @@ function AddTask(){
     return(
         <div className="addTaskContainer">
             <h1 className="span2">Create New Task</h1>
-            <input className="span2" id="taskInput" type="text" name="task" placeholder="Type someting" onKeyDown={checkForEnter}></input>
+            <input className="span2" id="taskInput" type="text" name="task" placeholder="Type someting" onKeyDown={checkForEnter} autoFocus></input>
             <div className="addTaskBtn" onClick={exit}>Cancel</div>
             <div className="addTaskBtn" onClick={save}>Save</div>
         </div>
